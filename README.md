@@ -1,1 +1,64 @@
-# associacao-classes
+```mermaid
+classDiagram
+    direction LR
+    
+    class Retangulo {
+        - altura : int
+        - largura : int
+        + Retangulo(int a, int l)
+        + getArea() int
+    }
+```
+
+```mermaid
+classDiagram
+    direction LR
+    
+    class Carro {
+        - marca: String
+        - propulsor: Motor
+        + Carro()
+        + acelerar(v:int) int
+    }
+    
+    class Motor{
+        - hp: int
+        - giroAtual: int
+        - cilindros: int
+        + Motor()
+        +acelerar(v:int) void
+    }
+    
+    class Roda {
+        - diametro: double
+        - material: String
+        - calibragem: double
+        + Roda()
+    }
+    
+    Carro "1"o--"1" Motor
+    Roda "3..4"--o"1" Carro
+```
+
+```mermaid
+classDiagram
+    direction LR
+    
+    class Aviao {
+        - pasMax: int
+        - triMax: int
+        - pesoMax: double
+        - combustivelMax: double
+        - numMotores: Motor[8]
+        + Aviao()
+    }
+    
+    class Motor {
+        - tipo: String
+        - consumo: double
+        - estado: boolean
+        + ligDes()
+    }
+    
+    Aviao "1"*--"1..8" Motor
+```
