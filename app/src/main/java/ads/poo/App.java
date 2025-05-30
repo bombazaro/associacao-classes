@@ -5,6 +5,9 @@ package ads.poo;
 
 public class App {
     public static void main(String[] args) {
+        Aviao aviao = new Aviao(30, 2, 3000, 500, 4, 1, "Hélice");
 
+        System.out.println(aviao.ligDes());
+        System.out.println(aviao.ligDes());
     }
 }

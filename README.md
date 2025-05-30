@@ -51,14 +51,51 @@ classDiagram
         - combustivelMax: double
         - numMotores: Motor[8]
         + Aviao()
+        + ligDes() boolean
     }
     
     class Motor {
         - tipo: String
         - consumo: double
         - estado: boolean
-        + ligDes()
+        + ligDes() boolean
     }
     
     Aviao "1"*--"1..8" Motor
+```
+
+```mermaid
+classDiagram
+    direction LR
+    
+    class Livro {
+        - idLivro: int
+        - titulo: String
+        - idioma String
+        - autores: ArrayList<Autor>
+        - edicoes: ArrayList<Edicao>
+    }
+    
+    class Edicao {
+        - idEdicao: int
+        - ano: int
+        - paginas: int
+        - isbn: String
+        - editora: Editora
+    }
+    
+    class Editora {
+        - idEditora: int
+        - nome: String
+        - cidade: String
+    }
+    
+    class Autor {
+        - idAutor: int
+        - nome: String
+    }
+
+    Livro "0..*" o-- "1--*" Autor
+    Livro "1" o-- "1--*" Edicao
+    Edicao "0..*" o-- "1" Editora
 ```
